@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
 
-        body.rotation += rotateInput * rotationSpeed;
+        body.rotation += -rotateInput * rotationSpeed;
 
         body.velocity = (forwardInput * forwardSpeed) * Rotate(Vector2.down, body.rotation) ;
 
