@@ -16,10 +16,10 @@ public class Cannonball : MonoBehaviour
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         //Debug.Log(hitInfo.name);
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
-        if (enemy != null)
+        Ship ship = hitInfo.GetComponent<Ship>();
+        if (ship != null)
         {
-            enemy.TakeDamage(1);
+            ship.TakeDamage(1);
         }
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);

@@ -2,25 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Ship
 {
-    public int health = 3;
-
-    public GameObject deathEffect;
-
-    public void TakeDamage(int damage)
+    public Rigidbody2D rb;
+    private Transform playerTransform;
+    // Start is called before the first frame update
+    void Start()
     {
-        health -= damage;
-
-        if (health <= 0)
-        {
-            Die();
-        }
+        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
     }
 
-    void Die()
+    // Update is called once per frame
+    void Update()
     {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        RotateToPlayer();
+    }
+
+    protected void RotateToPlayer()
+    {
+        Vector3 vectorToTarget = playerTransform.position - transform.position;
+        float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg) + 90;
+        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * rotationSpeed);
     }
 }
