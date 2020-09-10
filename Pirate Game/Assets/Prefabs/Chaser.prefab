@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 0c39a87b94c21094b80ff1efaebbb28b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,6 +101,8 @@ MonoBehaviour:
   rotationSpeed: 5
   deathEffect: {fileID: 7949603017854977185, guid: 2c1565e7f6758f046a09fb9e78375d90,
     type: 3}
+  damagedSprite: {fileID: 21300000, guid: 2cead7a271275bb49a98584e570e725c, type: 3}
+  breakingSprite: {fileID: 21300000, guid: b863eaf0ac156bc458eeb253365da8e2, type: 3}
   rb: {fileID: 5245471997670130796}
   impactEffect: {fileID: 7949603017854977185, guid: 2c1565e7f6758f046a09fb9e78375d90,
     type: 3}
@@ -144,7 +146,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1000
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0

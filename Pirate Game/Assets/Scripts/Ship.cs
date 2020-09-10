@@ -11,12 +11,26 @@ public class Ship : MonoBehaviour
 
     public GameObject deathEffect;
 
+    public Sprite damagedSprite;
+    public Sprite breakingSprite;
+
     public void TakeDamage(int damage)
     {
         health -= damage;
 
+        if(health == 2)
+        {
+            GetComponent<SpriteRenderer>().sprite = damagedSprite;
+        }
+
+        if (health == 1)
+        {
+            GetComponent<SpriteRenderer>().sprite = breakingSprite;
+        }
+
         if (health <= 0)
         {
+            Session.points++;
             Die();
         }
     }

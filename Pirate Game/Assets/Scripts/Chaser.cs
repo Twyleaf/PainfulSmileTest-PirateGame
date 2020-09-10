@@ -19,8 +19,8 @@ public class Chaser : Enemy
         if (player != null)
         {
             player.TakeDamage(1);
+            Instantiate(impactEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
-        Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(gameObject);
     }
 }

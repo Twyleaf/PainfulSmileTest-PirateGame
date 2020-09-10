@@ -15,7 +15,7 @@ public class Shooter : Enemy
     void Start()
     {
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
-        InvokeRepeating("Shoot", 2.0f, 0.3f);
+        InvokeRepeating("Shoot", 0.0f, 1f);
     }
 
     void Shoot()
@@ -34,13 +34,11 @@ public class Shooter : Enemy
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.tag);
         if (other.name == "Player") inRange = true;
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log(other.tag);
         if (other.name == "Player") inRange = false;
     }
 }
