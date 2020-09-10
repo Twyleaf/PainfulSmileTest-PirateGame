@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ship : MonoBehaviour
 {
@@ -30,8 +31,15 @@ public class Ship : MonoBehaviour
 
         if (health <= 0)
         {
-            Session.points++;
-            Die();
+            if(gameObject.tag == "Player")
+            {
+                SceneManager.LoadScene("GameOver");
+            }
+            else
+            {
+                GameplayParameters.points++;
+                Die();
+            }
         }
     }
 

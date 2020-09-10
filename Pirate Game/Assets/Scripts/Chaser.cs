@@ -18,7 +18,7 @@ public class Chaser : Enemy
         Player player = collision.gameObject.GetComponent<Player>();
         if (player != null)
         {
-            player.TakeDamage(1);
+            player.TakeDamage(GameplayParameters.enemyDamage);
             Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }

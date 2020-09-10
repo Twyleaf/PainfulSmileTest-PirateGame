@@ -1,15 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Session : MonoBehaviour
 {
-    public static int points = 0;
     float timeLeft = 120.0f;
+    public Player player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player.health = GameplayParameters.playerHealth;
+        player.forwardSpeed = GameplayParameters.playerForwardSpeed;
+        player.rotationSpeed = GameplayParameters.playerRotationSpeed;
+        GameplayParameters.points = 0;
     }
 
     // Update is called once per frame
@@ -19,8 +23,7 @@ public class Session : MonoBehaviour
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0)
         {
-            //GameOver();
-            Debug.Log("Foi");
+            SceneManager.LoadScene("GameOver");
         }
         
     }

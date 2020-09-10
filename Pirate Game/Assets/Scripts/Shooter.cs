@@ -15,7 +15,7 @@ public class Shooter : Enemy
     void Start()
     {
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
-        InvokeRepeating("Shoot", 0.0f, 1f);
+        InvokeRepeating("Shoot", 0.0f, 1.5f);
     }
 
     void Shoot()
@@ -40,5 +40,12 @@ public class Shooter : Enemy
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.name == "Player") inRange = false;
+    }
+
+    private void Shoot(Transform cannon)
+    {
+        GameObject CannonballObject = Instantiate(cannonballPrefab, cannon.position, cannon.rotation);
+        Cannonball cannonball = CannonballObject.GetComponent<Cannonball>();
+        cannonball.damage = GameplayParameters.enemyDamage;
     }
 }

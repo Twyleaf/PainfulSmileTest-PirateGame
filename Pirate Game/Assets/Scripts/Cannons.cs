@@ -24,14 +24,21 @@ public class Cannons : MonoBehaviour
 
     private void ShootFront()
     {
-        Instantiate(cannonballPrefab, frontalCannon.position, frontalCannon.rotation);
+        Shoot(frontalCannon);
     }
 
     private void ShootSides()
     {
         foreach (Transform cannon in sideCannons)
         {
-            Instantiate(cannonballPrefab, cannon.position, cannon.rotation);
+            Shoot(cannon);
         }
+    }
+
+    private void Shoot(Transform cannon)
+    {
+        GameObject CannonballObject = Instantiate(cannonballPrefab, cannon.position, cannon.rotation);
+        Cannonball cannonball = CannonballObject.GetComponent<Cannonball>();
+        cannonball.damage = GameplayParameters.playerDamage;
     }
 }

@@ -10,6 +10,9 @@ public class Enemy : Ship
     void Start()
     {
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
+        health = GameplayParameters.enemyHealth;
+        forwardSpeed = GameplayParameters.enemyForwardSpeed;
+        rotationSpeed = GameplayParameters.enemyRotationSpeed;
     }
 
     // Update is called once per frame

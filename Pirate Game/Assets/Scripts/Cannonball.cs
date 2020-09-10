@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cannonball : MonoBehaviour
 {
     public float speed = 20.0f;
+    public int damage = 1;
     public Rigidbody2D rb;
     public GameObject impactEffect;
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class Cannonball : MonoBehaviour
         Ship ship = collision.gameObject.GetComponent<Ship>();
         if (ship != null)
         {
-            ship.TakeDamage(1);
+            ship.TakeDamage(damage);
         }
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);

@@ -11,6 +11,7 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawnTime = GameplayParameters.enemySpawnRate;
         InvokeRepeating("SpawnEnemy", 0f, spawnTime);
     }
 
@@ -24,6 +25,6 @@ public class Spawner : MonoBehaviour
     {
         int spawnPointIndex = Random.Range(0, spawners.Length);
         int enemyIndex = Random.Range(0, enemyShipTypes.Length);
-        Instantiate(enemyShipTypes[enemyIndex], spawners[spawnPointIndex].position, spawners[spawnPointIndex].rotation);
+        GameObject enemyObject = Instantiate(enemyShipTypes[enemyIndex], spawners[spawnPointIndex].position, spawners[spawnPointIndex].rotation);
     }
 }
