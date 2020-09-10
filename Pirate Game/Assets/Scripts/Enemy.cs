@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : Ship
 {
     public Rigidbody2D rb;
-    private Transform playerTransform;
+    protected Transform playerTransform;
     // Start is called before the first frame update
     void Start()
     {

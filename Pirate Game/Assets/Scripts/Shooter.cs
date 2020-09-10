@@ -14,14 +14,16 @@ public class Shooter : Enemy
 
     void Start()
     {
-        
+        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
         InvokeRepeating("Shoot", 2.0f, 0.3f);
     }
 
     void Shoot()
     {
-        if(inRange)
-        Instantiate(cannonballPrefab, frontalCannon.position, frontalCannon.rotation);
+        if (inRange)
+        {
+            Instantiate(cannonballPrefab, frontalCannon.position, frontalCannon.rotation);
+        }
     }
 
     // Update is called once per frame
@@ -36,8 +38,9 @@ public class Shooter : Enemy
         if (other.name == "Player") inRange = true;
     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerExit2D(Collider2D other)
     {
+        Debug.Log(other.tag);
         if (other.name == "Player") inRange = false;
     }
 }
