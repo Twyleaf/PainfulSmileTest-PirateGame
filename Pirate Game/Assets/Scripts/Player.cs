@@ -23,6 +23,7 @@ public class Player : Ship
 
     private void FixedUpdate()
     {
+        rb.angularVelocity = 0;
 
         rb.rotation += -rotateInput * rotationSpeed;
 

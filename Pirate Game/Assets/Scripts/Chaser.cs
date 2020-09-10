@@ -8,14 +8,13 @@ public class Chaser : Enemy
     // Update is called once per frame
     void Update()
     {
-        //base.Update();
         RotateToPlayer();
         rb.velocity =  forwardSpeed * Rotate(Vector2.down, rb.rotation);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
         Player player = collision.gameObject.GetComponent<Player>();
         if (player != null)
         {

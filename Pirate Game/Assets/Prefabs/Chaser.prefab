@@ -102,6 +102,8 @@ MonoBehaviour:
   deathEffect: {fileID: 7949603017854977185, guid: 2c1565e7f6758f046a09fb9e78375d90,
     type: 3}
   rb: {fileID: 5245471997670130796}
+  impactEffect: {fileID: 7949603017854977185, guid: 2c1565e7f6758f046a09fb9e78375d90,
+    type: 3}
 --- !u!61 &5245471997670130795
 BoxCollider2D:
   m_ObjectHideFlags: 0

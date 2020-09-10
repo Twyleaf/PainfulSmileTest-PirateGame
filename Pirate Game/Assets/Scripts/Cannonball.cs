@@ -13,10 +13,10 @@ public class Cannonball : MonoBehaviour
         rb.velocity = -transform.up * speed;
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log(hitInfo.name);
-        Ship ship = hitInfo.GetComponent<Ship>();
+        Ship ship = collision.gameObject.GetComponent<Ship>();
         if (ship != null)
         {
             ship.TakeDamage(1);
