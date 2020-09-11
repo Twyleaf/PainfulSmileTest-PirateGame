@@ -8,7 +8,7 @@ public class PlayCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //camera.orthographicSize = 7.0f;
+        GetComponent<Camera>().orthographicSize = 7; // Size u want to start with
     }
 
 }

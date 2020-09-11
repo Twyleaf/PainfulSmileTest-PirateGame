@@ -19,18 +19,9 @@ public class MainMenu : MonoBehaviour
     public InputField enemyForwardSpeedText;
     public InputField enemyRotationSpeedText;
     public InputField enemySpawnRateText;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public InputField sessionTimeText;
+
 
     public void StartGame()
     {
@@ -71,6 +62,9 @@ public class MainMenu : MonoBehaviour
         if (enemySpawnRateText.text != "")
             GameplayParameters.enemySpawnRate = float.Parse(enemySpawnRateText.text);
 
-        GameplayParameters.LogParameters();
+        if (sessionTimeText.text != "")
+            GameplayParameters.sessionTime = float.Parse(sessionTimeText.text);
+
+        //GameplayParameters.LogParameters();
     }
 }

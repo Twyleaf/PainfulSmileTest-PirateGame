@@ -15,6 +15,8 @@ public static class GameplayParameters
     public static float enemyRotationSpeed = 5f;
     public static float enemySpawnRate = 1.0f;
 
+    public static float sessionTime = 120f;
+
     public static int points = 0;
 
     public static void LogParameters()

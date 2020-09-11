@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Session : MonoBehaviour
 {
-    float timeLeft = 120.0f;
+    float timeLeft = GameplayParameters.sessionTime;
     public Player player;
     // Start is called before the first frame update
     void Start()
