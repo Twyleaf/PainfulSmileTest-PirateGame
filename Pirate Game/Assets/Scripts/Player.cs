@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : Ship
 {
     Rigidbody2D rb;
+    private HPCounter hpCounter;
 
     float rotateInput;
     float forwardInput;
@@ -12,6 +13,7 @@ public class Player : Ship
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        hpCounter = GetComponentInChildren<HPCounter>();
     }
 
     void Update()
@@ -28,6 +30,8 @@ public class Player : Ship
         rb.rotation += -rotateInput * rotationSpeed;
 
         rb.velocity = (forwardInput * forwardSpeed) * Rotate(Vector2.down, rb.rotation) ;
+
+        hpCounter.ResetPosition(transform);
 
     }
 

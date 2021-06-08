@@ -15,7 +15,7 @@ public class Shooter : Enemy
     void Start()
     {
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
-        InvokeRepeating("Shoot", 0.0f, 1.5f);
+        InvokeRepeating("Shoot", 0.0f, 1.0f);
     }
 
     void Shoot()

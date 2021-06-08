@@ -11,9 +11,9 @@ public static class GameplayParameters
 
     public static int enemyHealth = 3;
     public static int enemyDamage = 1;
-    public static float enemyForwardSpeed = 5f;
+    public static float enemyForwardSpeed = 3f;
     public static float enemyRotationSpeed = 5f;
-    public static float enemySpawnRate = 1.0f;
+    public static float enemySpawnRate = 1.2f;
 
     public static float sessionTime = 120f;
 

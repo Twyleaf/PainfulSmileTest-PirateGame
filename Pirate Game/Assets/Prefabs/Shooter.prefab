@@ -236,6 +236,7 @@ MonoBehaviour:
   damagedSprite: {fileID: 21300000, guid: e6acb77381e8681469ee5b45b282fa6e, type: 3}
   breakingSprite: {fileID: 21300000, guid: 9995bdf1f61c1cb499bba813e303ee42, type: 3}
   rb: {fileID: 4125223203565044630}
+  hpCounter: {fileID: 1504491366455675584}
   frontalCannon: {fileID: 4125223204081517644}
   cannonballPrefab: {fileID: 3567012811028663997, guid: 3c6d188455c733046abb31a32bbed83f,
     type: 3}
@@ -254,7 +255,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 5
 --- !u!61 &4125223203565044628
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -11,7 +11,6 @@ public class GameOver : MonoBehaviour
 
     void Start()
     {
-        //Text sets your text to say this message
         pointsText.text = "Points Earned:" + (GameplayParameters.points);
     }
 

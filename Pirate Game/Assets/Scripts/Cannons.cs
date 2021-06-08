@@ -9,16 +9,30 @@ public class Cannons : MonoBehaviour
     public Transform[] sideCannons;
     public GameObject cannonballPrefab;
 
+    private float time = 0.3f;
+    private float timer;
+
+    void Start()
+    {
+        timer = time;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        timer -= Time.deltaTime;
+        if (timer < 0)
         {
-            ShootFront();
-        }
-        if (Input.GetButtonDown("Fire2"))
-        {
-            ShootSides();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                ShootFront();
+                timer = time;
+            }
+            if (Input.GetButtonDown("Fire2"))
+            {
+                ShootSides();
+                timer = time;
+            }
         }
     }
 

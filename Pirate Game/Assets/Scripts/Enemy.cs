@@ -6,6 +6,7 @@ public class Enemy : Ship
 {
     public Rigidbody2D rb;
     protected Transform playerTransform;
+    public HPCounter hpCounter;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,7 @@ public class Enemy : Ship
         health = GameplayParameters.enemyHealth;
         forwardSpeed = GameplayParameters.enemyForwardSpeed;
         rotationSpeed = GameplayParameters.enemyRotationSpeed;
+        //hpCounter = GetComponentInChildren<HPCounter>();
     }
 
     // Update is called once per frame
@@ -27,5 +29,6 @@ public class Enemy : Ship
         float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg) + 90;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * rotationSpeed);
+        hpCounter.ResetPosition(transform);
     }
 }
